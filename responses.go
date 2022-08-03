@@ -18,68 +18,68 @@ type SuccessResponse struct {
 }
 
 type Disk struct {
-	MaxFileSize                int           `json:"max_file_size,omitempty"`
-	PaidMaxFileSize            int64         `json:"paid_max_file_size,omitempty"`
-	TotalSpace                 int64         `json:"total_space,omitempty"`
-	TrashSize                  int           `json:"trash_size,omitempty"`
-	IsPaid                     bool          `json:"is_paid,omitempty"`
-	UsedSpace                  int64         `json:"used_space,omitempty"`
-	SystemFolders              SystemFolders `json:"system_folders,omitempty"`
-	User                       User          `json:"user,omitempty"`
-	UnlimitedAutouploadEnabled bool          `json:"unlimited_autoupload_enabled,omitempty"`
-	Revision                   int64         `json:"revision,omitempty"`
+	MaxFileSize                int           `json:"max_file_size"`
+	PaidMaxFileSize            int64         `json:"paid_max_file_size"`
+	TotalSpace                 int64         `json:"total_space"`
+	TrashSize                  int           `json:"trash_size"`
+	IsPaid                     bool          `json:"is_paid"`
+	UsedSpace                  int64         `json:"used_space"`
+	SystemFolders              SystemFolders `json:"system_folders"`
+	User                       User          `json:"user"`
+	UnlimitedAutouploadEnabled bool          `json:"unlimited_autoupload_enabled"`
+	Revision                   int64         `json:"revision"`
 }
 
 type SystemFolders struct {
-	Odnoklassniki string `json:"odnoklassniki,omitempty"`
-	Google        string `json:"google,omitempty"`
-	Instagram     string `json:"instagram,omitempty"`
-	Vkontakte     string `json:"vkontakte,omitempty"`
-	Mailru        string `json:"mailru,omitempty"`
-	Downloads     string `json:"downloads,omitempty"`
-	Applications  string `json:"applications,omitempty"`
-	Facebook      string `json:"facebook,omitempty"`
-	Social        string `json:"social,omitempty"`
-	Scans         string `json:"scans,omitempty"`
-	Screenshots   string `json:"screenshots,omitempty"`
-	Photostream   string `json:"photostream,omitempty"`
+	Odnoklassniki string `json:"odnoklassniki"`
+	Google        string `json:"google"`
+	Instagram     string `json:"instagram"`
+	Vkontakte     string `json:"vkontakte"`
+	Mailru        string `json:"mailru"`
+	Downloads     string `json:"downloads"`
+	Applications  string `json:"applications"`
+	Facebook      string `json:"facebook"`
+	Social        string `json:"social"`
+	Scans         string `json:"scans"`
+	Screenshots   string `json:"screenshots"`
+	Photostream   string `json:"photostream"`
 }
 
 type User struct {
-	Country     string `json:"country,omitempty"`
-	Login       string `json:"login,omitempty"`
-	DisplayName string `json:"display_name,omitempty"`
-	UID         string `json:"uid,omitempty"`
+	Country     string `json:"country"`
+	Login       string `json:"login"`
+	DisplayName string `json:"display_name"`
+	UID         string `json:"uid"`
 }
 
 type FilesResourceList struct {
-	Items  []Item `json:"items,omitempty"`
-	Limit  int    `json:"limit,omitempty"`
-	Offset int    `json:"offset,omitempty"`
+	Items  []Item `json:"items"`
+	Limit  int    `json:"limit"`
+	Offset int    `json:"offset"`
 }
 
 type Item struct {
-	AntivirusStatus string     `json:"antivirus_status,omitempty"`
-	Size            int64      `json:"size,omitempty"`
-	CommentIds      CommentIds `json:"comment_ids,omitempty"`
-	Name            string     `json:"name,omitempty"`
-	Exif            Exif       `json:"exif,omitempty"`
-	Created         time.Time  `json:"created,omitempty"`
-	ResourceID      string     `json:"resource_id,omitempty"`
-	Modified        time.Time  `json:"modified,omitempty"`
-	MimeType        string     `json:"mime_type,omitempty"`
-	File            string     `json:"file,omitempty"`
-	Path            string     `json:"path,omitempty"`
-	MediaType       string     `json:"media_type,omitempty"`
-	Sha256          string     `json:"sha256,omitempty"`
-	Type            string     `json:"type,omitempty"`
-	Md5             string     `json:"md5,omitempty"`
-	Revision        int64      `json:"revision,omitempty"`
+	AntivirusStatus string     `json:"antivirus_status"`
+	Size            int64      `json:"size"`
+	CommentIds      CommentIds `json:"comment_ids"`
+	Name            string     `json:"name"`
+	Exif            Exif       `json:"exif"`
+	Created         time.Time  `json:"created"`
+	ResourceID      string     `json:"resource_id"`
+	Modified        time.Time  `json:"modified"`
+	MimeType        string     `json:"mime_type"`
+	File            string     `json:"file"`
+	Path            string     `json:"path"`
+	MediaType       string     `json:"media_type"`
+	Sha256          string     `json:"sha256"`
+	Type            string     `json:"type"`
+	Md5             string     `json:"md5"`
+	Revision        int64      `json:"revision"`
 }
 
 type CommentIds struct {
-	PrivateResource string `json:"private_resource,omitempty"`
-	PublicResource  string `json:"public_resource,omitempty"`
+	PrivateResource string `json:"private_resource"`
+	PublicResource  string `json:"public_resource"`
 }
 
 type Exif struct {
