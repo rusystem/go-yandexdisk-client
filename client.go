@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/rusystem/go-yandexdisk-client/responses"
 	"net/http"
 	"os"
 	"time"
@@ -51,7 +50,7 @@ func (c *Client) sendRequest(req *http.Request, data interface{}) error {
 	defer resp.Body.Close()
 
 	if resp.StatusCode < http.StatusOK || resp.StatusCode >= http.StatusBadRequest {
-		var errResp responses.ErrorResponse
+		var errResp ErrorResponse
 		if err = json.NewDecoder(resp.Body).Decode(&errResp); err == nil {
 			return errors.New(errResp.Info())
 		}
@@ -66,7 +65,7 @@ func (c *Client) sendRequest(req *http.Request, data interface{}) error {
 	return nil
 }
 
-func (c *Client) GetDiskInfo(ctx context.Context) (*responses.Disk, error) {
+func (c *Client) GetDiskInfo(ctx context.Context) (*Disk, error) {
 	req, err := http.NewRequest("GET", c.BaseURL, nil)
 	if err != nil {
 		return nil, err
@@ -74,7 +73,7 @@ func (c *Client) GetDiskInfo(ctx context.Context) (*responses.Disk, error) {
 
 	req = req.WithContext(ctx)
 
-	d := responses.Disk{}
+	d := Disk{}
 	if err = c.sendRequest(req, &d); err != nil {
 		return nil, err
 	}
@@ -82,7 +81,7 @@ func (c *Client) GetDiskInfo(ctx context.Context) (*responses.Disk, error) {
 	return &d, nil
 }
 
-func (c *Client) GetFiles(ctx context.Context) ([]responses.Item, error) {
+func (c *Client) GetFiles(ctx context.Context) ([]Item, error) {
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/resources/files", c.BaseURL), nil)
 	if err != nil {
 		return nil, err
@@ -90,7 +89,7 @@ func (c *Client) GetFiles(ctx context.Context) ([]responses.Item, error) {
 
 	req = req.WithContext(ctx)
 
-	f := responses.FilesResourceList{}
+	f := FilesResourceList{}
 	if err = c.sendRequest(req, &f); err != nil {
 		return nil, err
 	}
@@ -112,7 +111,7 @@ func (c *Client) UploadFile(ctx context.Context, fileName string, url string) er
 
 	req = req.WithContext(ctx)
 
-	var r responses.SuccessResponse
+	var r SuccessResponse
 	if err = c.sendRequest(req, &r); err != nil {
 		return err
 	}
@@ -134,7 +133,7 @@ func (c *Client) DeleteResource(ctx context.Context, resourceName string) error 
 
 	req = req.WithContext(ctx)
 
-	var r responses.SuccessResponse
+	var r SuccessResponse
 	if err = c.sendRequest(req, &r); err != nil {
 		return err
 	}
