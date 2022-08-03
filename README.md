@@ -1,5 +1,7 @@
-## Getting go-yandexdisk-client
+## Getting 
+This library is designed as a simple wrapper around the Yandex.Disk API.
 
+## Installing
 ```
 go get github.com/rusystem/go-yandexdisk-client
 ```
