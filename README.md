@@ -21,7 +21,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/rusystem/go-yandexdisk-client"
+	yandexdiskapi "github.com/rusystem/go-yandexdisk-client"
 	"log"
 	"time"
 )
@@ -32,7 +32,7 @@ const (
 )
 
 func main() {
-	c, err := yandexdisk.NewClient(apiToken, timeout)
+	c, err := yandexdiskapi.NewClient(apiToken, timeout)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -57,7 +57,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/rusystem/go-yandexdisk-client"
+	yandexdiskapi "github.com/rusystem/go-yandexdisk-client"
 	"log"
 	"time"
 )
@@ -68,7 +68,7 @@ const (
 )
 
 func main() {
-	c, err := yandexdisk.NewClient(apiToken, timeout)
+	c, err := yandexdiskapi.NewClient(apiToken, timeout)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -95,8 +95,7 @@ package main
 
 import (
 	"context"
-	"fmt"
-	"github.com/rusystem/go-yandexdisk-client"
+	yandexdiskapi "github.com/rusystem/go-yandexdisk-client"
 	"log"
 	"time"
 )
@@ -107,7 +106,7 @@ const (
 )
 
 func main() {
-	c, err := yandexdisk.NewClient(apiToken, timeout)
+	c, err := yandexdiskapi.NewClient(apiToken, timeout)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -132,7 +131,7 @@ package main
 
 import (
 	"context"
-	"github.com/rusystem/go-yandexdisk-client"
+	yandexdiskapi "github.com/rusystem/go-yandexdisk-client"
 	"log"
 	"time"
 )
@@ -143,7 +142,7 @@ const (
 )
 
 func main() {
-	c, err := yandexdisk.NewClient(apiToken, timeout)
+	c, err := yandexdiskapi.NewClient(apiToken, timeout)
 	if err != nil {
 		log.Fatal(err)
 	}
