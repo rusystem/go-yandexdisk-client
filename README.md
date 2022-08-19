@@ -1,4 +1,4 @@
-## Getting 
+## Client for Yandex.Disk. 
 This library is designed as a simple wrapper around the Yandex.Disk API.
 
 ## Installing
